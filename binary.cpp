@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+using namespace std::chrono;
 int sarr(int n)
 {
     int counter{0};
@@ -12,6 +13,7 @@ int sarr(int n)
 }
 int main()
 {
+    auto start = high_resolution_clock::now();
     int n , s;
     cin >> n;
     s = sarr(n);
@@ -25,5 +27,10 @@ int main()
         {
             cout << arr[i] << " " ;
         }
+        cout << endl;
+
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<seconds>(stop-start);
+    cout << duration.count() << " seconds" << endl;
 
 }
